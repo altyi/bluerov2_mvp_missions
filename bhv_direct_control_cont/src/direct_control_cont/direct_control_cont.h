@@ -76,12 +76,14 @@ namespace helm {
         void disabled() override;
 
         /**
-         * @brief subscriber
+         * @brief subscriber for new values
          */
         ros::Subscriber new_depth_command;
 
-        void new_command(const std_msgs::Float64::ConstPtr& m);
-
+        /**
+         * @brief mvp message
+         */
+        void new_command(const mvp_msgs::ControlProcess::ConstPtr& new_values);
 
 
         /**

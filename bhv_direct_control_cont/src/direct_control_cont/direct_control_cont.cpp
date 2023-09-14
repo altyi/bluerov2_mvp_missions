@@ -88,10 +88,7 @@ void DirectControlCont::initialize() {
 
     m_pnh->param<std::string>("new_depth_topic", new_depth_command_name, "new_depth");
 
-
-
     new_depth_command = m_nh->subscribe(new_depth_command_name, 100, &DirectControlCont::new_command, this);
-
 
     /**
      * @brief Declare the degree of freedoms to be controlled by the behavior
@@ -122,9 +119,24 @@ void DirectControlCont::initialize() {
     };
 }
 
-void DirectControlCont::new_command(const std_msgs::Float64::ConstPtr& m){
 
-    m_desired_z = m->data;    
+void DirectControlCont::new_command(const mvp_msgs::ControlProcess::ConstPtr& new_values){
+
+    m_desired_x = new_values->position.x;    
+    m_desired_y = new_values->position.y;    
+    m_desired_z = new_values->position.z;    
+
+    m_desired_roll = new_values->orientation.x;
+    m_desired_pitch = new_values->orientation.y;
+    m_desired_yaw = new_values->orientation.z;
+
+    m_desired_surge = new_values->velocity.x;
+    m_desired_sway = new_values->velocity.y;
+    m_desired_heave = new_values->velocity.z; 
+
+    m_desired_roll_rate = new_values->angular_rate.x;
+    m_desired_pitch_rate = new_values->angular_rate.y;
+    m_desired_yaw_rate = new_values->angular_rate.z;
 }
 
 
