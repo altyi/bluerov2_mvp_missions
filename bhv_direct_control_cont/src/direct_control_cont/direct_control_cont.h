@@ -85,6 +85,9 @@ namespace helm {
          */
         void new_command(const mvp_msgs::ControlProcess::ConstPtr& new_values);
 
+        // std_msgs::Header::header desired_header;
+        // std::string desired_frame;
+
 
         /**
          * @brief Max value for x

@@ -53,6 +53,8 @@ void DirectControlCont::initialize() {
     m_nh.reset(new ros::NodeHandle(""));
 
     // ROS related: load parameters, setup sub/pub
+    // m_pnh->param<std::string>("desired_frame", desired_frame, "world_ned");
+
     m_pnh->param<double>("max_x", m_max_x, 5.0);
     m_pnh->param<double>("max_y", m_max_y, 5.0);
     m_pnh->param<double>("max_z", m_max_z, 5.0);
@@ -122,6 +124,8 @@ void DirectControlCont::initialize() {
 
 void DirectControlCont::new_command(const mvp_msgs::ControlProcess::ConstPtr& new_values){
 
+    // desired_frame = new_values->header.frame_id;
+
     m_desired_x = new_values->position.x;    
     m_desired_y = new_values->position.y;    
     m_desired_z = new_values->position.z;    
@@ -170,6 +174,7 @@ bool DirectControlCont::request_set_point(
     mvp_msgs::ControlProcess *set_point) {
 
     // Set position
+    // set_point->header.frame_id = desired_frame;
 
     // check the limitation
     if(m_desired_x > m_max_x) {
