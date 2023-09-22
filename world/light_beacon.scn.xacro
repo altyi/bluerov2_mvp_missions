@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of ALPHA AUV project.
+    Author: Yuewei 
+    Email: yweifu@uri.edu
+    Year: 2023
+    Copyright (C) 2022 Smart Ocean Systems Laboratory
+-->
+<scenario xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find world_of_stonefish)/metadata/looks.scn.xacro"/>
+    <xacro:include filename="$(find world_of_stonefish)/metadata/materials.scn.xacro"/>
+
+
+    <light name="Spot">
+        <specs radius="0.016" cone_angle="135.0" illuminance="1500.0"/>
+        <color temperature="5700.0"/>
+        <world_transform xyz="1.8 0.0 2.7" rpy="1.56 0.0 -1.56"/>
+    </light>
+
+
+    <!-- <light name="Spot">
+        <specs radius="0.016" cone_angle="135.0" illuminance="1500.0"/>
+        <color temperature="5700.0"/>
+        <world_transform xyz="5.0 0.03 2.0" rpy="1.56 0.0 -1.56"/>
+    </light> -->
+
+
+    <!-- <static name="apriltag" type="terrain">
+        <height_map filename="/home/sosl-legion/catkin_ws/src/world_of_stonefish/metadata/tag36_11_00011_100px.png"/>
+        <dimensions scalex="0.01" scaley="0.01" height="0.1"/>
+        <material name="Rock"/>
+        <look name="apriltag"/>
+        <cg xyz=" 0.0 0 0.0" rpy="0.0 0.0 0.0"/>
+        <world_transform xyz="2.0 0.0 -0.5" rpy="1.56 0.0 1.56"/>
+    </static> -->
+
+    <static name="apriltag" type="box">
+        <dimensions xyz="0.5 0.5 0.0001"/>
+        <material name="Steel"/>
+        <look name="apriltag11" uv_mode="1"/>
+        <world_transform xyz="2.0 0.0 10.0" rpy="0.0 0.0 3.1415"/>
+    </static>
+
+    <static name="apriltag" type="box">
+        <dimensions xyz="0.5 0.5 0.0001"/>
+        <material name="Steel"/>
+        <look name="apriltag21" uv_mode="1"/>
+        <world_transform xyz="0.0 0.0 10.0" rpy="0.0 0.0 3.1415"/>
+    </static>
+
+    <static name="apriltag" type="box">
+        <dimensions xyz="0.5 0.5 0.0001"/>
+        <material name="Steel"/>
+        <look name="apriltag31" uv_mode="1"/>
+        <world_transform xyz="0.0 2.0 10.0" rpy="0.0 0.0 3.1415"/>
+    </static>
+
+</scenario>
