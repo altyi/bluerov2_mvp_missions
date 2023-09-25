@@ -1,0 +1,15 @@
+cam0:
+  camera_model: pinhole
+  # intrinsics: [1404.917, 1403.505, 962.317, 605.784]
+  # intrinsics: [805.5356459301888, 805.5356459301887, 960.0, 600.0]
+  intrinsics: [1399.497052515653, 1399.497052515653, 808.0, 620.0]
+
+  distortion_model: radtan
+  # distortion_coeffs: [-0.161604, 0.093674, -0.000037, -0.000336, 0.000000]
+  distortion_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+  resolution: [1616, 1240]
+  # rostopic: /pg_17274483/image_raw
+  rostopic: /bluerov2/camera_forward/image_color
+  tagtopic: /detector/tags
+  rig_body: camera_rig
