@@ -12,8 +12,15 @@
     <xacro:include filename="$(find world_of_stonefish)/metadata/materials.scn.xacro"/>
 
 
+    <!-- 
+        XHP70B-00-0000-0D0BP20E2
+        7mm x 7mm
+        1500 lumens (currently set to 100x)
+        5700 k
+        135 degree in water
+    -->
     <light name="Spot">
-        <specs radius="0.016" cone_angle="135.0" illuminance="1500.0"/>
+        <specs radius="0.0035" cone_angle="135.0" illuminance="150000.0"/>
         <color temperature="5700.0"/>
         <world_transform xyz="3.25 0.0 1.5" rpy="1.56 0.0 -1.56"/>
     </light>
@@ -71,55 +78,55 @@
         <dimensions xyz="0.15 0.15 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag4" uv_mode="1"/>
-        <world_transform xyz="3.25 0.0 0.75" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 0.0 1.0" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagright" type="box">
         <dimensions xyz="0.15 0.15 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag5" uv_mode="1"/>
-        <world_transform xyz="3.25 0.75 1.5" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 0.5 1.5" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagbot" type="box">
         <dimensions xyz="0.15 0.15 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag6" uv_mode="1"/>
-        <world_transform xyz="3.25 0.0 2.25" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 0.0 2.0" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagleft" type="box">
         <dimensions xyz="0.15 0.15 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag7" uv_mode="1"/>
-        <world_transform xyz="3.25 -0.75 1.5" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 -0.5 1.5" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagsmall_top" type="box">
         <dimensions xyz="0.05 0.05 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag10" uv_mode="1"/>
-        <world_transform xyz="3.25 0.0 1.35" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 0.0 1.25" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagsmall_right" type="box">
         <dimensions xyz="0.05 0.05 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag11" uv_mode="1"/>
-        <world_transform xyz="3.25 0.15 1.5" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 0.25 1.5" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagsmall_bot" type="box">
         <dimensions xyz="0.05 0.05 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag12" uv_mode="1"/>
-        <world_transform xyz="3.25 0.0 1.65" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 0.0 1.75" rpy="0.0 1.5708 3.1415"/>
     </static>
 
     <static name="apriltagsmall_left" type="box">
         <dimensions xyz="0.05 0.05 0.0001"/>
         <material name="Steel"/>
         <look name="apriltag13" uv_mode="1"/>
-        <world_transform xyz="3.25 -0.15 1.5" rpy="0.0 1.5708 3.1415"/>
+        <world_transform xyz="3.25 -0.25 1.5" rpy="0.0 1.5708 3.1415"/>
     </static>
 </scenario>
